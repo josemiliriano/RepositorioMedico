@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="APIMedicoPaciente/APIMedicoPaciente.csproj" />
+  <Project Path="Domain/Domain.csproj" Id="189fc9e0-e702-48ed-8586-61c10bd4bb2c" />
 </Solution>
