@@ -20,8 +20,8 @@ namespace Domain.Entities
         public string Status { get; set; }
         public string? Notes { get; set; }
         public char IsDelete { get; set; } = '0';        
-        public CDPatient Patients { get; set; }
-        public CDDoctor Doctors { get; set; }
-        public CDClinic Clinics { get; set; }
+        public CDPatient Patient { get; set; }
+        public CDDoctor Doctor { get; set; }
+        public CDClinic Clinic { get; set; }
     }
 }

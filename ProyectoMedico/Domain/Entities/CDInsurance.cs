@@ -17,6 +17,6 @@ namespace Domain.Entities
         [Column(TypeName = "date")]
         public DateTime ExpirationDate { get; set; } 
         public char IsDelete { get; set; } = '0';        
-        public ICollection<CDPatient> Patients { get; set; }
+        public ICollection<CDPatient> Patient { get; set; }
     }
 }

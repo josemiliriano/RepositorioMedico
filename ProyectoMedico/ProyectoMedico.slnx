@@ -1,4 +1,6 @@
 <Solution>
   <Project Path="APIMedicoPaciente/APIMedicoPaciente.csproj" />
+  <Project Path="Application/Application.csproj" Id="ca198b02-97ff-4d13-b808-8b1335032ee1" />
   <Project Path="Domain/Domain.csproj" Id="189fc9e0-e702-48ed-8586-61c10bd4bb2c" />
+  <Project Path="Infraestructure/Infraestructure.csproj" Id="ff5db01f-57e7-47c0-87be-f38094b9f400" />
 </Solution>
