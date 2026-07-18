@@ -15,6 +15,6 @@ namespace Domain.Entities
         public string? Email { get; set; }        
         public string? Manager { get; set; }
         public char IsDelete { get; set; } = '0';        
-        public ICollection<CDMedicalAppointment> MedicalAppointments { get; set; }
+        public ICollection<CDMedicalAppointment> MedicalAppointment { get; set; }
     }
 }

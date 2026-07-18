@@ -20,12 +20,10 @@ namespace Domain.Entities
         [Column(TypeName = "date")]
         public DateTime RegistrationDate { get; set; } = DateTime.Now;
         public char IsDelete { get; set; } = '0';
-        public CDPerson Persons { get; set; }
-        
+        public CDPerson Person { get; set; }        
         public CDInsurance? Insurance { get; set; }
-
-        public ICollection<CDMedicalAppointment> MedicalAppointments { get; set; }
-        //public ICollection<MedicalHistory> MedicalHistories { get; set; }
+        public ICollection<CDMedicalAppointment> MedicalAppointment { get; set; }
+        public ICollection<CDMedicalHistory> MedicalHistorhy { get; set; }
 
     }
 }

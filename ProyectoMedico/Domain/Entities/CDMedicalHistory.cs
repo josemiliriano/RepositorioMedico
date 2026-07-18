@@ -21,10 +21,10 @@ namespace Domain.Entities
         public string? Observations { get; set; }
         public string? MedicalNotes { get; set; }
         public char IsDelete { get; set; } = '0';        
-        public CDPatient Patients { get; set; }
-        public CDDoctor Doctors { get; set; }
-        public CDMedicalAppointment? MedicalAppointments { get; set; }
-        public ICollection<CDPrescription> Prescriptions { get; set; }
+        public CDPatient Patient { get; set; }
+        public CDDoctor Doctor { get; set; }
+        public CDMedicalAppointment? MedicalAppointment { get; set; }
+        public ICollection<CDPrescription> Prescription { get; set; }
     }
 }
 

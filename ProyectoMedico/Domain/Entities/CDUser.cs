@@ -16,6 +16,7 @@ namespace Domain.Entities
         public DateTime CreationDay { get; set; } = DateTime.Now;
         public bool IsActive { get; set; } = true;
         public char IsDelete { get; set; }
+        public CDPerson Person { get; set; }
 
     }
 }

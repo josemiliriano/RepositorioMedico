@@ -16,6 +16,6 @@ namespace Domain.Entities
         [MaxLength(300)]
         public string? Description { get; set; }
         public char IsDelete { get; set; } = '0';        
-        public ICollection<CDDoctor> Doctors { get; set; }
+        public ICollection<CDDoctor> Doctor { get; set; }
     }
 }

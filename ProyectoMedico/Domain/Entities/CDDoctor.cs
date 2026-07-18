@@ -19,7 +19,10 @@ namespace Domain.Entities
         [Column(TypeName = "date")]
         public DateTime HireDate { get; set; }    
         public char IsDelete { get; set; } = '0';        
-        public CDPerson Persons { get; set; }
+        public CDPerson Person { get; set; }
         public CDSpecialty Specialty { get; set; }
+        public ICollection<CDMedicalAppointment> MedicalAppointments { get; set; }
+
+        public ICollection<CDMedicalHistory> MedicalHistories { get; set; }
     }
 }

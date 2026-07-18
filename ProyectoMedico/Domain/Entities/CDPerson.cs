@@ -17,7 +17,8 @@ namespace Domain.Entities
         [Column(TypeName = "date")]
         public DateTime Birthday { get; set; }
         public char IsDelete { get; set; } = '0';
-        public CDUser? Users { get; set; }
-        public CDPatient? Patients { get; set; }
+        public CDUser? User { get; set; }
+        public CDPatient? Patient { get; set; }
+        public CDDoctor? Doctor { get; set; }
     }
 }
