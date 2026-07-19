@@ -2,6 +2,7 @@
 using Domain.Entities;
 using Infraestructure.Exeptions;
 using Infraestructure.Repository;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -34,7 +35,9 @@ namespace Application.Person
                     Identification = dto.Identification,
                     Birthday = dto.Birthday
                 };
+                await _Reporsitory.AddSync(NewPerson);
                 return NewPerson; 
+
             }
             catch (AlreadyExistsException e)
             {

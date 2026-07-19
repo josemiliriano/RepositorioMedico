@@ -12,10 +12,11 @@ namespace Domain.Entities
         public int IDUser { get; set; }
         public int PersonId { get; set; }
         public string Login { get; set; }
+        public string Password { get; set; }
         [Column(TypeName = "date")]
         public DateTime CreationDay { get; set; } = DateTime.Now;
         public bool IsActive { get; set; } = true;
-        public char IsDelete { get; set; }
+        public char IsDelete { get; set; } = '0';
         public CDPerson Person { get; set; }
 
     }

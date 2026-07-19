@@ -18,8 +18,8 @@ namespace Domain.Entities
         public DateTime Birthday { get; set; }
         public string Identification { get; set; }
         public char IsDelete { get; set; } = '0';
-        public CDUser? User { get; set; }
-        public CDPatient? Patient { get; set; }
-        public CDDoctor? Doctor { get; set; }
+        public CDUser User { get; set; }
+        public CDPatient Patient { get; set; }
+        public CDDoctor Doctor { get; set; }
     }
 }
