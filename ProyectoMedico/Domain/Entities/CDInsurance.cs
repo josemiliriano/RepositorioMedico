@@ -10,13 +10,13 @@ namespace Domain.Entities
     {
         [Key]
         public int IdInsurance { get; set; }
-        public string InsuranceName { get; set; } 
-        public string PolicyNumber { get; set; } 
-        public string CoverageType { get; set; }   
+        public string InsuranceName { get; set; }
+        public string PolicyNumber { get; set; }
+        public string CoverageType { get; set; }
         public decimal CoveragePercentage { get; set; }
         [Column(TypeName = "date")]
-        public DateTime ExpirationDate { get; set; } 
-        public char IsDelete { get; set; } = '0';        
-        public ICollection<CDPatient> Patient { get; set; }
+        public DateTime ExpirationDate { get; set; }
+        public char IsDelete { get; set; } = '0';
+        public ICollection<CDPatient> Patients { get; set; } = new List<CDPatient>();
     }
 }
