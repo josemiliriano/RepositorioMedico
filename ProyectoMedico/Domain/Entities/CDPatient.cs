@@ -22,8 +22,8 @@ namespace Domain.Entities
         public char IsDelete { get; set; } = '0';
         public CDPerson Person { get; set; }        
         public CDInsurance? Insurance { get; set; }
-        public ICollection<CDMedicalAppointment> MedicalAppointment { get; set; }
-        public ICollection<CDMedicalHistory> MedicalHistorhy { get; set; }
+        public ICollection<CDMedicalAppointment> MedicalAppointments { get; set; } = new List<CDMedicalAppointment>();
+        public ICollection<CDMedicalHistory> MedicalHistories { get; set; } = new List<CDMedicalHistory>();
 
     }
 }
