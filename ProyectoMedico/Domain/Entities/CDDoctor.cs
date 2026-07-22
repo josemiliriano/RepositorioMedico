@@ -17,7 +17,7 @@ namespace Domain.Entities
         public int YearsExperience { get; set; }        
         public decimal ConsultationFee { get; set; }
         [Column(TypeName = "date")]
-        public DateTime HireDate { get; set; }    
+        public DateTime HireDate { get; set; } = DateTime.Now;   
         public char IsDelete { get; set; } = '0';        
         public CDPerson Person { get; set; }
         public CDSpecialty Specialty { get; set; }
