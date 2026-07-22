@@ -33,7 +33,7 @@ namespace Infraestructure.Data
 
             modelBuilder.Entity<CDPatient>()
                 .HasOne(p => p.Insurance)
-                .WithMany(i => i.Patient)
+                .WithMany(i => i.Patients)
                 .HasForeignKey(p => p.InsuranceId)
                 .OnDelete(DeleteBehavior.NoAction);
 
@@ -46,7 +46,7 @@ namespace Infraestructure.Data
 
             modelBuilder.Entity<CDMedicalAppointment>()
                 .HasOne(a => a.Patient)
-                .WithMany(p => p.MedicalAppointment)
+                .WithMany(p => p.MedicalAppointments)
                 .HasForeignKey(a => a.PatientId)
                 .OnDelete(DeleteBehavior.NoAction);
 
@@ -64,7 +64,7 @@ namespace Infraestructure.Data
 
             modelBuilder.Entity<CDMedicalHistory>()
                 .HasOne(h => h.Patient)
-                .WithMany(p => p.MedicalHistorhy)
+                .WithMany(p => p.MedicalHistories)
                 .HasForeignKey(h => h.PatientId)
                 .OnDelete(DeleteBehavior.NoAction);
 
