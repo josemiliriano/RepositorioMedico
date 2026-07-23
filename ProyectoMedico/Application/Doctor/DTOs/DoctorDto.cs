@@ -17,6 +17,6 @@ namespace Application.Doctor.DTOs
         public string MedicalLicense { get; set; }
         public string ProfessionalCode { get; set; }
         public int YearsExperience { get; set; }
-        public decimal ConsultationFee { get; set; }
+        public decimal ConsultationFee { get; set; }        
     }
 }

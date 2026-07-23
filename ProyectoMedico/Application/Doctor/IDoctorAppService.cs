@@ -13,7 +13,7 @@ namespace Application.Doctor
         public Task<CDDoctor> UpdateDoctor(int id, DoctorOnlyDto dto);
         public Task DeleteDoctor(int id);
         public Task<CDDoctor> GetDoctorById(int id);
-        public Task<List<CDDoctor>> GetAllDoctorsWhitName(DoctorDto dto);
+        public Task<List<DoctorDto>> GetAllDoctorsWhitName(DoctorDto dto);
         public Task<List<CDDoctor>> GetDoctotNoDelete();
         public Task<CDDoctor> SoftDelete(int id);
     }

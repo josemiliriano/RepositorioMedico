@@ -63,17 +63,25 @@ namespace Application.Doctor
             return await _repository.GetAll();
         }
 
-        public async Task<List<CDDoctor>> GetAllDoctorsWhitName(DoctorDto dto)
+        public async Task<List<DoctorDto>> GetAllDoctorsWhitName(DoctorDto dto)
         {
-            return await _context.Doctors.Include(d => d.Person).Select(d => new DoctorDto
-            {
-                Name = d.Person.Name,
-                SpecialityId = dto.SpecialityId,
-                MedicalLicense = dto.MedicalLicense,
-                ProfessionalCode = dto.ProfessionalCode,
-                YearsExperience = dto.YearsExperience,
-                ConsultationFee = dto.ConsultationFee
-            };
+            return await _context.Doctors
+                .Include(d => d.Person)
+                .Select(d => new DoctorDto
+                {
+                    PersonId = d.PersonId,
+                    SpecialityId = d.SpecialityId,
+                    Name = d.Person.Name,
+                    LastName = d.Person.LastName,
+                    Address = d.Person.Address,
+                    Phone = d.Person.Phone,
+                    Identification = d.Person.Identification,
+                    Birthday = d.Person.Birthday,
+                    MedicalLicense = d.MedicalLicense,
+                    ProfessionalCode = d.ProfessionalCode,
+                    YearsExperience = d.YearsExperience,
+                    ConsultationFee = d.ConsultationFee
+                }).ToListAsync();
         }
 
         public async Task<CDDoctor> GetDoctorById(int id)
@@ -95,6 +103,7 @@ namespace Application.Doctor
             {
                 Doctor.IsDelete = '1';
             }
+            _repository.SoftDelete(Doctor);
             return Doctor;
         }
 
@@ -110,6 +119,7 @@ namespace Application.Doctor
                 Doctor.YearsExperience = dto.YearsExperience;
                 Doctor.ConsultationFee = dto.ConsultationFee;
             }
+            _repository.Update(Doctor);
             return Doctor;
         }
     }
