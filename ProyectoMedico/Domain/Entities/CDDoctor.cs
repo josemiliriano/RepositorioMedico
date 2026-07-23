@@ -22,7 +22,6 @@ namespace Domain.Entities
         public CDPerson Person { get; set; }
         public CDSpecialty Specialty { get; set; }
         public ICollection<CDMedicalAppointment> MedicalAppointments { get; set; }
-
         public ICollection<CDMedicalHistory> MedicalHistories { get; set; }
     }
 }
