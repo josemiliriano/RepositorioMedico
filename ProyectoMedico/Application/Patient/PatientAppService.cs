@@ -128,6 +128,7 @@ namespace Application.Patient
             {
                 patient.IsDelete = '1';
             }
+            await _repository.SoftDelete(patient);
             return patient;
         }
 
@@ -143,6 +144,7 @@ namespace Application.Patient
                 patient.EmergencyContact = dto.EmergencyContact;
                 patient.EmergencyPhone = dto.EmergencyPhone;
             }
+            await _repository.Update(patient);
             return patient;
         }
     }
