@@ -96,8 +96,7 @@ namespace Application.Patient
                    EmergencyPhone = p.EmergencyPhone,
                    RegistrationDate = p.RegistrationDate,
                    InsuranceName = p.Insurance.InsuranceName
-               })
-               .ToListAsync();
+               }).ToListAsync();
         }
 
         public async Task<CDPatient> GetPatientById(int id)
