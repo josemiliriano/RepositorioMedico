@@ -80,11 +80,7 @@ namespace Infraestructure.Data
                 .HasForeignKey(h => h.MedicalAppointmentId)
                 .OnDelete(DeleteBehavior.NoAction);
 
-            modelBuilder.Entity<CDPrescription>()
-                .HasOne(p => p.MedicalHistory)
-                .WithMany(h => h.Prescription)
-                .HasForeignKey(p => p.MedicalHistoryId)
-                .OnDelete(DeleteBehavior.NoAction);
+            
         }
 
         public DbSet<CDPerson> Persons { get; set; }
