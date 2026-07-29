@@ -14,7 +14,7 @@ namespace Application.Person
         private readonly GeneralRepository<CDPerson> _Reporsitory;
         public PersonAppService(GeneralRepository<CDPerson> Reporsitory)
         {
-            _Reporsitory = _Reporsitory;
+            _Reporsitory = Reporsitory;
         }
 
         public async Task<CDPerson> AddPerson(PersonDto dto)
@@ -22,7 +22,7 @@ namespace Application.Person
             try
             {
                 var exist = await _Reporsitory.ExistsAsync(p => p.Identification.ToLower() == dto.Identification.ToLower());
-                if (exist == null)
+                if (exist)
                 {
                     throw new AlreadyExistsException("Identificacion", dto.Identification);
                 }
