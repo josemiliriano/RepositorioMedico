@@ -16,14 +16,14 @@ namespace Infraestructure.Repository
         }
         public async Task<T>AddSync(T entity)
         {
-            _context.AddAsync(entity);
-            _context.SaveChangesAsync();
+           await _context.AddAsync(entity);
+           await _context.SaveChangesAsync();
             return entity;
         }
 
-        public Task<List<T>> GetAll()
+        public async Task<List<T>> GetAll()
         {
-           return _context.Set<T>().ToListAsync();
+           return await _context.Set<T>().ToListAsync();
         }
         public async Task<T> GetById(int id)        {
             
@@ -32,7 +32,7 @@ namespace Infraestructure.Repository
         public async Task<T>Update(T entity)
         {
             _context.Update(entity);
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
             return entity;
         }
         public async Task DeleteAsync(T entity)
