@@ -16,8 +16,8 @@ namespace APIMedicoPaciente.Controllers
             _service = service;
         }
         [HttpPost]
-        [Route("api/[controller]/AddPerson")]
-        public async Task<ActionResult> AddPerson(PersonDto dto)
+        [Route("api/[controller]/CreatePerson")]
+        public async Task<ActionResult> CreatePerson(PersonDto dto)
         {
             var NewClient = await _service.AddPerson(dto);
             return Ok(NewClient);

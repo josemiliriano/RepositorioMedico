@@ -1,4 +1,5 @@
 using Application.Person;
+using Application.Users;
 using Domain.Entities;
 using Infraestructure.Data;
 using Infraestructure.Repository;
@@ -11,7 +12,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddScoped(typeof(GeneralRepository<CDPerson>));
 builder.Services.AddScoped<IPersonAppService, PersonAppService>();
-
+builder.Services.AddScoped(typeof(GeneralRepository<CDUser>));
+builder.Services.AddScoped<IUserAppService, UserAppService>();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddSwaggerGen();

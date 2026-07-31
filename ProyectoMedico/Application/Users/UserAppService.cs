@@ -20,7 +20,7 @@ namespace Application.Users
             _context = context;
         }
 
-        public async Task<CDUser> AddUser(UserDto dto)
+        public async Task<UserDto> AddUser(UserDto dto)
         {
             try
             {
@@ -48,7 +48,18 @@ namespace Application.Users
                 };
                 await _service.AddSync(newUser);
 
-                return newUser;
+                return new UserDto
+                {
+                    PersonId = newUser.PersonId,
+                    Login = newUser.Login,
+                    Password = newUser.Password,
+                    Name = Person.Name,
+                    LastName = Person.LastName,
+                    Address = Person.Address,
+                    Phone = Person.Phone,
+                    Identification = Person.Identification,
+                    Birthday = Person.Birthday
+                };
             }
             catch (AlreadyExistsException e)
             {
@@ -70,7 +81,7 @@ namespace Application.Users
             return await _service.GetAll();
         }
 
-        public async Task<List<UserDto>> GetAllUserWhitName(UserDto dto)
+        public async Task<List<UserDto>> GetAllUserWhitName()
         {
             return await _context.Users.Include(u => u.Person).Select(u => new UserDto 
             {
